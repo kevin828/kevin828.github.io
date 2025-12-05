@@ -101,4 +101,6 @@ The core logic resides in `src/components/utilities/PortfolioLayoutRenderer.tsx`
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+The source code for this project is available under the [MIT License](LICENSE).
+
+The content, design, and creative assets are licensed under a [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License](https://creativecommons.org/licenses/by-nc-nd/4.0/) (CC BY-NC-ND 4.0).
