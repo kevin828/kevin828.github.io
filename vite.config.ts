@@ -19,6 +19,6 @@ export default defineConfig(({ mode }) => {
         '@': path.resolve(__dirname, './src'),
       }
     },
-    base: "/k.h.strategy/",
+    base: "/KH-Strategy/",
   };
 });
