@@ -19,6 +19,6 @@ export default defineConfig(({ mode }) => {
         '@': path.resolve(__dirname, './src'),
       }
     },
-    base: "/kevin828.github.io/",
+    base: "/k.h.strategy/",
   };
 });
