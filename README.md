@@ -1,5 +1,7 @@
 # Project Insanity - K.H. Strategy
 
+[ [繁體中文](README.zh-TW.md) ]
+
 > **Last Updated:** December 8, 2025
 
 **Project Insanity** is an advanced Single Page Application (SPA) portfolio website designed to demonstrate the fusion of Software Engineering discipline with Business Strategy insights. 
