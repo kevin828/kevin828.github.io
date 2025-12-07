@@ -11,6 +11,15 @@ export type ThemeCategory = 'Portfolio' | 'E-Commerce' | 'Corporate' | 'Content/
 
 export const CATEGORIES: ThemeCategory[] = ['Portfolio', 'E-Commerce', 'Corporate', 'Content/News', 'Software/SaaS'];
 
+// Configuration for which sub-theme to display in the Portfolio section preview cards
+export const PREVIEW_SUBTHEME_IDS: Record<ThemeCategory, string> = {
+  'Portfolio': 'UXUIDesigner',
+  'E-Commerce': 'FashionLuxury',
+  'Corporate': 'NonProfitNGO',
+  'Content/News': 'TravelAdventure',
+  'Software/SaaS': 'FreemiumSoftware'
+};
+
 // Static helper to get themes without hook state
 export const getThemesByCategory = (cat: ThemeCategory, lang: 'en' | 'tw') => {
   if (lang === 'tw') {
