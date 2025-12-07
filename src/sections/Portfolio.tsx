@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getThemesByCategory, ThemeCategory, CATEGORIES } from '../core/hooks/useThemeSwitcher';
+import { getThemesByCategory, ThemeCategory, CATEGORIES, PREVIEW_SUBTHEME_IDS } from '../core/hooks/useThemeSwitcher';
 import PortfolioLayoutRenderer from '../components/utilities/PortfolioLayoutRenderer';
 import { useLanguage } from '../core/hooks/useLanguage';
 import { translations } from '../core/data/translations';
@@ -23,11 +23,14 @@ const PortfolioCard: React.FC<{ category: ThemeCategory }> = ({ category }) => {
   const navigate = useNavigate();
   const { language } = useLanguage();
   const tCats = translations[language].categories;
+  const tPortfolio = translations[language].portfolio;
   const cardRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
 
   const themes = getThemesByCategory(category, language);
-  const defaultTheme = themes[0];
+  // Use configured preview ID, or fallback to first available theme
+  const previewId = PREVIEW_SUBTHEME_IDS[category];
+  const defaultTheme = themes.find(t => t.id === previewId) || themes[0];
 
   const getCategoryLabel = (cat: ThemeCategory) => {
     switch (cat) {
@@ -41,14 +44,15 @@ const PortfolioCard: React.FC<{ category: ThemeCategory }> = ({ category }) => {
   };
 
   const getCategoryDescription = (cat: ThemeCategory) => {
-    const map: Record<ThemeCategory, { en: string, tw: string }> = {
-      'Portfolio': { en: "Creative layouts for personal branding and portfolios.", tw: "個人品牌與作品集的創意佈局。" },
-      'E-Commerce': { en: "Conversion-optimized storefronts and product pages.", tw: "最佳化轉換率的商店與產品頁面。" },
-      'Corporate': { en: "Professional designs for B2B and service industries.", tw: "B2B 與服務產業的專業設計。" },
-      'Content/News': { en: "Information-dense layouts for blogs and magazines.", tw: "部落格與雜誌的高資訊密度佈局。" },
-      'Software/SaaS': { en: "Modern landing pages for apps and software products.", tw: "App 與軟體產品的現代化著陸頁。" }
-    };
-    return language === 'tw' ? map[cat].tw : map[cat].en;
+    const desc = tPortfolio.categoryDescriptions;
+    switch (cat) {
+      case 'Portfolio': return desc.portfolio;
+      case 'E-Commerce': return desc.ecommerce;
+      case 'Corporate': return desc.corporate;
+      case 'Content/News': return desc.news;
+      case 'Software/SaaS': return desc.software;
+      default: return '';
+    }
   };
 
   useEffect(() => {

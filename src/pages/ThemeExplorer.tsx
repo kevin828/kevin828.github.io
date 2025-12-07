@@ -39,6 +39,7 @@ const ThemeExplorer: React.FC = () => {
 
     const tCats = translations[language].categories;
     const tNav = translations[language].nav;
+    const tExplorer = translations[language].themeExplorer;
 
     const category = slugToCategory(categorySlug || '');
 
@@ -89,8 +90,8 @@ const ThemeExplorer: React.FC = () => {
     if (!category) {
         return (
             <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 dark:bg-slate-900">
-                <h1 className="text-2xl font-bold mb-4 dark:text-white">Category Not Found</h1>
-                <Button onClick={() => navigate('/')}>Return Home</Button>
+                <h1 className="text-2xl font-bold mb-4 dark:text-white">{tExplorer.categoryNotFound}</h1>
+                <Button onClick={() => navigate('/')}>{tExplorer.returnHome}</Button>
             </div>
         );
     }
@@ -135,7 +136,7 @@ const ThemeExplorer: React.FC = () => {
                                         <div className="fixed inset-0 z-40" onClick={() => setIsCategoryMenuOpen(false)}></div>
                                         <div className="absolute top-full left-0 mt-3 w-64 bg-white dark:bg-slate-800 rounded-xl shadow-2xl border border-gray-100 dark:border-slate-700 py-2 z-50 overflow-hidden ring-1 ring-black/5 animate-in fade-in zoom-in-95 duration-100">
                                             <div className="px-4 py-2 text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider border-b border-gray-100 dark:border-slate-700 mb-1">
-                                                Switch Theme Category
+                                                {tExplorer.switchCategory}
                                             </div>
                                             {CATEGORIES.map(cat => (
                                                 <button
