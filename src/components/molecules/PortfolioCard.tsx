@@ -1,23 +1,11 @@
 import React, { useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getThemesByCategory, ThemeCategory, PREVIEW_SUBTHEME_IDS } from '../../core/hooks/useThemeSwitcher';
+import { getThemesByCategory, ThemeCategory, PREVIEW_SUBTHEME_IDS, categoryToSlug } from '../../core/hooks/useThemeSwitcher';
 import PortfolioLayoutRenderer from '../utilities/PortfolioLayoutRenderer';
 import { useLanguage } from '../../core/hooks/useLanguage';
 import { translations } from '../../core/data/translations';
 import Button from '../atoms/Button';
 import Card from './Card';
-
-// Mapping for URL slugs
-const categoryToSlug = (cat: ThemeCategory): string => {
-  switch (cat) {
-    case 'Portfolio': return 'portfolio';
-    case 'E-Commerce': return 'ecommerce';
-    case 'Corporate': return 'corporate';
-    case 'Content/News': return 'news';
-    case 'Software/SaaS': return 'software';
-    default: return 'portfolio';
-  }
-};
 
 interface PortfolioCardProps {
   category: ThemeCategory;

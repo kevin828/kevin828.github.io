@@ -20,6 +20,30 @@ export const PREVIEW_SUBTHEME_IDS: Record<ThemeCategory, string> = {
   'Software/SaaS': 'FreemiumSoftware'
 };
 
+// Helper to map Category strings to URL slugs
+export const categoryToSlug = (cat: ThemeCategory): string => {
+  switch (cat) {
+    case 'Portfolio': return 'portfolio';
+    case 'E-Commerce': return 'ecommerce';
+    case 'Corporate': return 'corporate';
+    case 'Content/News': return 'news';
+    case 'Software/SaaS': return 'software';
+    default: return 'portfolio';
+  }
+};
+
+// Helper to map URL slugs back to exact Category strings
+export const slugToCategory = (slug: string): ThemeCategory | undefined => {
+  switch (slug) {
+    case 'portfolio': return 'Portfolio';
+    case 'ecommerce': return 'E-Commerce';
+    case 'corporate': return 'Corporate';
+    case 'news': return 'Content/News';
+    case 'software': return 'Software/SaaS';
+    default: return undefined;
+  }
+};
+
 // Static helper to get themes without hook state
 export const getThemesByCategory = (cat: ThemeCategory, lang: 'en' | 'tw') => {
   if (lang === 'tw') {
