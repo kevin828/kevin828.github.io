@@ -9,6 +9,7 @@ import About from './sections/About';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 import ScrollToTopButton from './components/atoms/ScrollToTopButton';
+import ThemeExplorer from './pages/ThemeExplorer';
 import { LanguageProvider } from './core/hooks/useLanguage';
 
 const LandingPage: React.FC = () => {
@@ -34,10 +35,7 @@ const App: React.FC = () => {
     <LanguageProvider>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        {/* Additional routes can be added here in the future, e.g.:
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/login" element={<Login />} />
-        */}
+        <Route path="/explore/:categorySlug" element={<ThemeExplorer />} />
       </Routes>
     </LanguageProvider>
   );
