@@ -46,7 +46,9 @@ export const translations = {
         corporate: "Professional designs for B2B and service industries.",
         news: "Information-dense layouts for blogs and magazines.",
         software: "Modern landing pages for apps and software products."
-      }
+      },
+      explore: "Explore",
+      layouts: "Layouts"
     },
     pricing: {
       title: "Transparent Investment",
@@ -163,7 +165,9 @@ export const translations = {
         corporate: "B2B 與服務產業的專業設計。",
         news: "部落格與雜誌的高資訊密度佈局。",
         software: "App 與軟體產品的現代化著陸頁。"
-      }
+      },
+      explore: "探索",
+      layouts: "種佈局"
     },
     pricing: {
       title: "透明的投資方案",

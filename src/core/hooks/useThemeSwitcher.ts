@@ -14,7 +14,7 @@ export const CATEGORIES: ThemeCategory[] = ['Portfolio', 'E-Commerce', 'Corporat
 // Configuration for which sub-theme to display in the Portfolio section preview cards
 export const PREVIEW_SUBTHEME_IDS: Record<ThemeCategory, string> = {
   'Portfolio': 'UXUIDesigner',
-  'E-Commerce': 'FashionLuxury',
+  'E-Commerce': 'DigitalProducts',
   'Corporate': 'NonProfitNGO',
   'Content/News': 'TravelAdventure',
   'Software/SaaS': 'FreemiumSoftware'
