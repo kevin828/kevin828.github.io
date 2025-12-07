@@ -33,7 +33,7 @@
   },
   "include": [
     "src",
-    "App.tsx"
+    "src/App.tsx"
   ],
   "exclude": [
     "node_modules"

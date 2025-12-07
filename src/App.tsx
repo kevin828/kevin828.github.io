@@ -1,15 +1,15 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Navigation from './src/sections/Navigation';
-import Hero from './src/sections/Hero';
-import Portfolio from './src/sections/Portfolio';
-import Services from './src/sections/Services';
-import Pricing from './src/sections/Pricing';
-import About from './src/sections/About';
-import Contact from './src/sections/Contact';
-import Footer from './src/sections/Footer';
-import ScrollToTopButton from './src/components/atoms/ScrollToTopButton';
-import { LanguageProvider } from './src/core/hooks/useLanguage';
+import Navigation from './sections/Navigation';
+import Hero from './sections/Hero';
+import Portfolio from './sections/Portfolio';
+import Services from './sections/Services';
+import Pricing from './sections/Pricing';
+import About from './sections/About';
+import Contact from './sections/Contact';
+import Footer from './sections/Footer';
+import ScrollToTopButton from './components/atoms/ScrollToTopButton';
+import { LanguageProvider } from './core/hooks/useLanguage';
 
 const LandingPage: React.FC = () => {
   return (
